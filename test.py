@@ -1,11 +1,11 @@
 class Empty(Exception):
     pass
 
+
 class ArrayQueue:
 
     def __init__(self):
         self._data = []
-
 
     def __len__(self):
         return len(self._data)
@@ -16,21 +16,19 @@ class ArrayQueue:
         else:
             return True
 
-
-  def first(self):
-        if len(self._data) == False:
+    def first(self):
+        if len(self._data) is False:
             raise Empty("error")
         else:
             return self._data[0]
 
     def dequeue(self):
-        if len(self._data) == False:
+        if len(self._data) is False:
             raise Empty("error")
 
         val = self._data[0]
         del self._data[0]
         return val
-
 
     def enqueue(self, e):
         self._data.append(e)
@@ -43,4 +41,3 @@ print(len(Q))
 print(Q.dequeue())
 print(len(Q))
 print(Q.first())
-
